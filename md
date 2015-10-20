@@ -48,9 +48,11 @@ function render(path) {
       .addClass('navbar-static-top')
       .removeClass('navbar-fixed-top')
 
-    var title=$(".container h1")[0].innerText
+    var title=$(".container h1")[0].innerHTML
     if (title && title && title.length > 0) {
-      document.title=title
+      document.getElementsByTagName('title')[0].innerHTML=title
+      $('.navbar-inner #headline.brand')[0].innerHTML=title+'<tt style="font-size:0.7em;margin-left:5em">'+path+'</tt>'
+      $(".container h1").hide()
     }
 
     $('#loading').hide()
