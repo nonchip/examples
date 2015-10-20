@@ -35,6 +35,8 @@ function render(path) {
   var theme = getParameterByName("theme")
   if (theme && theme && theme.length > 0) {
     $(xmp).attr('theme', theme)
+  }else{
+    $(xmp).attr('theme', 'readable');
   }
 
   $.get(path, function(data) {
