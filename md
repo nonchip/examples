@@ -48,13 +48,17 @@ function render(path) {
       .addClass('navbar-static-top')
       .removeClass('navbar-fixed-top')
 
-    var title=$(".container h1")[0].innerHTML
-    if (title && title && title.length > 0) {
-      document.getElementsByTagName('title')[0].innerHTML=title
-      $('.navbar-inner #headline.brand')[0].innerHTML=title+'<tt style="font-size:0.7em;margin-left:5em">'+path+'</tt>'
-      $(".container h1").hide()
+    var title=$(".container h1")
+    if(title && title[0]){
+      title=title.innerHTML
+      if (title && title && title.length > 0) {
+        document.getElementsByTagName('title')[0].innerHTML=title
+        $('.navbar-inner #headline.brand')[0].innerHTML=title+'<tt style="font-size:0.7em;margin-left:5em">'+path+'</tt>'
+        $(".container h1").hide()
+      }
+    }else{
+      $('.navbar-inner #headline.brand')[0].innerHTML='<tt style="font-size:0.7em">'+path+'</tt>'
     }
-
     $('#loading').hide()
   })
 }
