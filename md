@@ -61,7 +61,7 @@ function render(path) {
 
 var hash = window.location.hash.substring(1)
 if (hash.length > 0) {
-  if(hash.substring(hash.lenght - 1) == "/"){
+  if(hash.substring(hash.length - 1) == "/"){
     window.location.hash = window.location.hash+"index.md"
     window.location.reload()
   }
