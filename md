@@ -68,8 +68,9 @@ if (hash.length > 0) {
   if(hash.substring(hash.length - 1) == "/"){
     window.location.hash = window.location.hash+"index.md"
     window.location.reload()
+  }else{
+    render(hash)
   }
-  render(hash)
 } else {
   window.location.hash = "#index.md"
   window.location.reload()
