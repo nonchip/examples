@@ -46,6 +46,11 @@ function render(path) {
       .addClass('navbar-static-top')
       .removeClass('navbar-fixed-top')
 
+    var title=$(".container h1")[0].innerText
+    if (title && title && title.length > 0) {
+      document.title=title
+    }
+
     $('#loading').hide()
   })
 }
@@ -54,9 +59,14 @@ var hash = window.location.hash.substring(1)
 if (hash.length > 0) {
   render(hash)
 } else {
-  window.location.hash = "#sample.md"
+  window.location.hash = "#index.md"
   window.location.reload()
 }
+
+window.onhashchange = function(){
+  window.location.reload()
+}
+
 </script>
 </body>
 </html>
